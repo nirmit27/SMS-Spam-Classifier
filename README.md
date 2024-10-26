@@ -63,7 +63,7 @@ curl -X POST http://127.0.0.1:5000/api/label -H "Content-Type: application/json"
 #### `POST /api/label`
 
 * **Description**: Classifies an SMS message as HAM or SPAM.
-* **Request Body**: JSON object with a single key:
+* **Request Body**: JSON object with a single key :
   
     ```json
     {
@@ -71,7 +71,7 @@ curl -X POST http://127.0.0.1:5000/api/label -H "Content-Type: application/json"
     }
     ```
 
-* **Response**: JSON object with the classification label:
+* **Response**: JSON object with the classification label :
   
     ```json
     {
