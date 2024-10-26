@@ -90,7 +90,7 @@ The application handles errors with custom templates :
 This project can be deployed on [**Render**](https://docs.render.com/free). 
 Make sure to update environment variables, if any, in Render’s settings and ensure that both the model and vectorizer files are uploaded.
 
-> If you are on the **Hobby** plan on Render (like me 😅), mind your **Monthly Free Usage** information.
+> If you are on the **Hobby** plan on Render *(like me)*, mind your **Monthly Free Usage** information.
 
 ## License
 This project is licensed under the [MIT](https://opensource.org/license/mit) License.
