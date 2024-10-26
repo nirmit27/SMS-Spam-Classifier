@@ -7,5 +7,7 @@ It processes SMS messages to determine whether they are `ham` or `spam`, providi
 ## Dataset link
 [SMS Spam Collection Dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset)
 
+<!-- 
 ## Deplyment link
 [Web Service on Render](https://sms-spam-classifier-hf0a.onrender.com/)
+ -->
