@@ -16,20 +16,26 @@ This API provides an interface to classify SMS messages as **spam** or **ham** b
 
 ### Installation
 
-1. **Clone the repository**:
+1. **Clone the repository** :
 
     ```bash
     git clone https://github.com/nirmit27/SMS-Spam-Classifier.git
     cd sms-spam-classifier
     ```
 
-2. **Install dependencies**:
+2. **Install dependencies** :
 
     ```bash
     pip install -r requirements.txt
     ```
 
-3. **Run the application locally**:
+3. **Download the `wordnet` corpora** :
+   ```python
+   import nltk
+   nltk.download('wordnet')
+   ```
+
+4. **Run the application locally** :
 
     ```bash
     python app.py
@@ -41,7 +47,7 @@ This API provides an interface to classify SMS messages as **spam** or **ham** b
 
 ### Local Testing
 
-To classify a message, you can use the `/api/label` endpoint:
+To classify a message, you can use the `/api/label` endpoint :
 
 ```bash
 curl -X POST http://127.0.0.1:5000/api/label -H "Content-Type: application/json" -d '{"message": "Congratulations! You have won a prize."}'
@@ -75,10 +81,10 @@ curl -X POST http://127.0.0.1:5000/api/label -H "Content-Type: application/json"
     ```
 
 ## Error Handling
-The application handles errors with custom templates:
+The application handles errors with custom templates :
 
-* **_404 Not Found_**: Returns a `404` page if the route does not exist.
-* **_500 Internal Server Error_**: Returns a `500` page for server-related errors.
+* **_404 Not Found :_** Returns a `404` page if the route does not exist.
+* **_500 Internal Server Error :_** Returns a `500` page for server-related errors.
 
 ## Deployment
 This project can be deployed on [**Render**](https://docs.render.com/free). 
