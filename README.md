@@ -1,9 +1,9 @@
-# SMS Spam Classification API
+# SMS Spam Classification
 
 This project is a web service for SMS spam classification, built using the **Flask** framework. It leverages a trained machine learning model to classify SMS messages as either `HAM` (legitimate) or `SPAM`.
 
 ## Overview
-This API provides an interface to classify SMS messages as **spam** or **ham** based on a trained machine learning model. The application utilizes a **Random Forest Classifier** and **TF-IDF vectorizer**, stored in [rfc-model.pkl](./rfc-model.pkl) and [tfidf-vectorizer.pkl](./tfidf-vectorizer.pkl) files, respectively.
+This web service provides a UI and an API to classify SMS messages as **spam** or **ham** based on a trained machine learning model. The application utilizes a **Random Forest Classifier** and **TF-IDF vectorizer**, stored in [rfc-model.pkl](./rfc-model.pkl) and [tfidf-vectorizer.pkl](./tfidf-vectorizer.pkl) files, respectively.
 
 ## Setup
 

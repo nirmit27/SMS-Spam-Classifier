@@ -1,3 +1,4 @@
+import re
 from pickle import load
 from flask import Flask, jsonify, request, url_for, render_template
 
@@ -6,19 +7,35 @@ model = load(open(r'rfc-model.pkl', 'rb'))
 vectorizer = load(open(r'tfidf-vectorizer.pkl', 'rb'))
 
 
+def fetch_label(data: str) -> str:
+    vector = vectorizer.transform([data]).toarray()
+    prediction = model.predict(vector.reshape(1, -1))[0]
+    return "HAM" if prediction == 0 else "SPAM"
+
+
 @app.route("/", methods=["GET"])
 def index():
-    return render_template('index.html', title="SMS Classifier")
+    return render_template('index.html', title="Home")
+
+
+@app.route("/result", methods=["POST"])
+def result():
+    user_input = request.form.get('input-area') or ""
+    sms = user_input.strip()
+    label = fetch_label(sms) if sms != "" else "SPAM"
+    return render_template('result.html', sms=sms.strip(), label=label, title="Result")
 
 
 @app.route("/api/label", methods=["POST"])
 def message_label():
     data = request.get_json()
-    vector = vectorizer.transform([data['message']]).toarray()
-    prediction = model.predict(vector.reshape(1, -1))[0]
+    if 'message' in data.keys():
+        message = data['message'].strip()
+        data.update({"message": message, "label": fetch_label(message)
+                    if message != "" else "SPAM"})
+        return jsonify(data), 200
 
-    data.update({"label": "HAM" if prediction == 0 else "SPAM"})
-    return jsonify(data), 200
+    return jsonify({"error": "Invalid input"}), 404
 
 
 @app.errorhandler(404)

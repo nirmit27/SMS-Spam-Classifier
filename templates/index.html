@@ -1,16 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div
-    class="mt-12 md:p-8 p-4 flex bg-slate-100 rounded-md shadow-sm flex justify-center items-start flex-col gap-4 md:w-2/4 w-1/2">
+<form action="/result" method="post"
+    class="mt-12 md:p-8 p-4 flex bg-slate-100 rounded-md shadow-sm flex justify-center items-start flex-col gap-4 md:w-2/4 w-3/4">
     <h1 class="font-bold md:text-3xl sm:text-2xl text-xl text-blue-500">
-        SMS Classification API
+        SMS Classification
     </h1>
-    <p class="text-justify md:text-lg text-sm">
-        This is an SMS spam classification API built using the Flask framework. It processes SMS messages to determine
+    <p class="text-justify mb-4">
+        This is an SMS spam classification webapp built using the Flask framework. It processes SMS messages to determine
         whether
-        they are spam or legitimate, providing an efficient, backend solution for automated message filtering.
+        they are spam or legitimate. Give it a try!
     </p>
-</div>
+    <label for="input-area" class="md:text-lg font-semibold">Enter the SMS message</label>
+    <textarea name="input-area" id="input-area" required rows="3"
+        class="px-2 py-1 w-full border border-blue-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-600"
+        placeholder='e.g. "Is that seriously how you spell his name?"'></textarea>
+    <div class="flex w-full justify-end items-center md:gap-4 gap-2">
+        <button
+            class="px-4 py-2 rounded-md shadow-sm hover:shadow-md active:shadow-sm bg-red-500 hover:bg-red-600 active:bg-red-500 focus:outline-none focus:ring-1 focus:ring-red-700 text-white font-semibold"
+            type="reset">Reset</button>
+        <button
+            class="px-4 py-2 rounded-md shadow-sm hover:shadow-md active:shadow-sm bg-blue-500 hover:bg-blue-600 active:bg-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-700 text-white font-semibold"
+            type="submit">Classify</button>
+    </div>
+</form>
 
 {% endblock content %}
