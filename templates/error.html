@@ -1,13 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="mt-12 md:p-8 p-4 flex bg-red-100 rounded-md shadow-sm flex justify-center items-start flex-col gap-4 md:w-2/4 w-1/2">
-    <h1 class="font-bold md:text-3xl sm:text-2xl text-xl text-red-600">
+<div class="mt-12 md:p-8 p-4 flex bg-red-100 rounded-md md:shadow-md shadow-sm flex justify-center items-start flex-col gap-4 md:w-2/4 w-3/4">
+    <h1 class="font-bold md:text-3xl sm:text-2xl text-xl text-red-500">
         Oops!
     </h1>
-    <p class="text-justify md:text-lg sm:text-sm">
+    <p class="text-justify md:text-lg text-sm">
         {{ error }}
     </p>
+    <div class="w-full flex justify-end items-center">
+        <a href="/"
+            class="px-4 py-2 rounded-md shadow-sm hover:shadow-md active:shadow-sm bg-blue-500 hover:bg-blue-600 active:bg-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-700">
+            <button class="text-white font-semibold sm:text-base text-sm">
+                Back to homepage
+            </button>
+        </a>
+    </div>
 </div>
 
 {% endblock content %}

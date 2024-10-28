@@ -18,7 +18,7 @@ def index():
     return render_template('index.html', title="Home")
 
 
-@app.route("/result", methods=["POST"])
+@app.route("/result", methods=["POST", "GET"])
 def result():
     user_input = request.form.get('input-area') or ""
     sms = user_input.strip()
