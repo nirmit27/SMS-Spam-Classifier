@@ -3,16 +3,18 @@
 This project is a web service for SMS spam classification, built using the **Flask** framework. It leverages a trained machine learning model to classify SMS messages as either `HAM` (legitimate) or `SPAM`.
 
 ## Overview
-This web service provides a UI and an API to classify SMS messages as **spam** or **ham** based on a trained machine learning model. The application utilizes a **Random Forest Classifier** and **TF-IDF vectorizer**, stored in [rfc-model.pkl](./rfc-model.pkl) and [tfidf-vectorizer.pkl](./tfidf-vectorizer.pkl) files, respectively.
+This web service provides a user interface and an API to classify SMS messages as **spam** or **ham** based on a trained machine learning model. The application utilizes a **Random Forest Classifier** and **TF-IDF vectorizer**, stored in [rfc-model.pkl](./rfc-model.pkl) and [tfidf-vectorizer.pkl](./tfidf-vectorizer.pkl) files, respectively.
 
 ## Setup
 
 ### Prerequisites
 
-* Python 3.7+
+* Python 3.8+
 * nltk
 * scikit-learn
 * Flask
+
+    For more details, refer to the [requirements.txt](./requirements.txt) for this project.
 
 ### Installation
 
@@ -41,7 +43,7 @@ This web service provides a UI and an API to classify SMS messages as **spam** o
     python app.py
     ```
 
-    The application will be available at http://127.0.0.1:5000 if you have followed through correctly.
+    The application will be available at **http://127.0.0.1:5000** if you have followed through correctly.
 
 ## Usage
 
@@ -50,15 +52,22 @@ This web service provides a UI and an API to classify SMS messages as **spam** o
 To classify a message, you can use the `/api/label` endpoint :
 
 ```bash
-curl -X POST http://127.0.0.1:5000/api/label -H "Content-Type: application/json" -d '{"message": "Congratulations! You have won a prize."}'
+curl -X POST http://127.0.0.1:5000/api/label -H "Content-Type: application/json" -d '  {"message": "Congratulations! You have won a prize."}'
 ```
 
-## Endpoints
+## Preview
 
-#### `GET /`
+Here are screenshots of the application in action :
 
-* **Description**: Renders the home page.
-* **Response**: Returns the [index.html](./templates/index.html) template.
+* Taking user input in the text box to classify an SMS message.
+  
+  ![User Input](./static/input.png)
+
+* Displaying the classification result as "HAM" or "SPAM" based on the input.
+
+    ![Result](./static/result.png)
+
+## API Endpoint
 
 #### `POST /api/label`
 
@@ -83,8 +92,8 @@ curl -X POST http://127.0.0.1:5000/api/label -H "Content-Type: application/json"
 ## Error Handling
 The application handles errors with custom templates :
 
-* **_404 Not Found :_** Returns a `404` page if the route does not exist.
-* **_500 Internal Server Error :_** Returns a `500` page for server-related errors.
+* **404 Not Found :** Returns a `404` page if the route does not exist.
+* **500 Internal Server Error :** Returns a `500` page for server-related errors.
 
 ## Deployment
 This project can be deployed on [**Render**](https://docs.render.com/free). 
