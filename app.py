@@ -1,4 +1,3 @@
-import re
 from pickle import load
 from flask import Flask, jsonify, request, url_for, render_template
 
