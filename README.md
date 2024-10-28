@@ -1,9 +1,9 @@
 # SMS Spam Classification
 
-This project is a web service for SMS spam classification, built using the **Flask** framework. It leverages a trained machine learning model to classify SMS messages as either `HAM` (legitimate) or `SPAM`.
+This project is a web service for SMS spam classification, built using the [**Flask**](https://flask.palletsprojects.com/en/stable/) framework and deployed on [**Render**](https://docs.render.com/free). It leverages a trained machine learning model to classify SMS messages as either `HAM` (legitimate) or `SPAM`.
 
 ## Overview
-This web service provides a user interface and an API to classify SMS messages as **spam** or **ham** based on a trained machine learning model. The application utilizes a **Random Forest Classifier** and **TF-IDF vectorizer**, stored in [rfc-model.pkl](./rfc-model.pkl) and [tfidf-vectorizer.pkl](./tfidf-vectorizer.pkl) files, respectively.
+This web service provides a user interface and an API endpoint to classify SMS messages as **spam** or **ham** based on a trained machine learning model. The application utilizes a **Random Forest Classifier** and **TF-IDF vectorizer**, stored in [rfc-model.pkl](./rfc-model.pkl) and [tfidf-vectorizer.pkl](./tfidf-vectorizer.pkl) files, respectively.
 
 ## Setup
 
@@ -31,13 +31,7 @@ This web service provides a user interface and an API to classify SMS messages a
     pip install -r requirements.txt
     ```
 
-3. **Download the `wordnet` corpora** :
-   ```python
-   import nltk
-   nltk.download('wordnet')
-   ```
-
-4. **Run the application locally** :
+3. **Run the application locally** :
 
     ```bash
     python app.py
@@ -96,8 +90,8 @@ The application handles errors with custom templates :
 * **500 Internal Server Error :** Returns a `500` page for server-related errors.
 
 ## Deployment
-This project can be deployed on [**Render**](https://docs.render.com/free). 
-Make sure to update environment variables, if any, in Render’s settings and ensure that both the model and vectorizer files are uploaded.
+
+#### **Link** : [Web Service on Render](https://sms-spam-classifier-ofm6.onrender.com/)
 
 > If you are on the **Hobby** plan on Render *(like me)*, mind your **Monthly Free Usage** information.
 
