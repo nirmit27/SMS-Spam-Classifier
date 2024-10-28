@@ -18,12 +18,13 @@ def index():
     return render_template('index.html', title="Home")
 
 
-@app.route("/result", methods=["POST", "GET"])
+@app.route("/result", methods=["POST"])
 def result():
     user_input = request.form.get('input-area') or ""
     sms = user_input.strip()
     label = fetch_label(sms) if sms != "" else "SPAM"
-    return render_template('result.html', sms=sms.strip(), label=label, title="Result")
+    color = "red" if label == "SPAM" else "green"
+    return render_template('result.html', sms=sms.strip(), label=label, title="Result", color=color)
 
 
 @app.route("/api/label", methods=["POST"])
