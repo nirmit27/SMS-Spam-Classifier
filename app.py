@@ -7,6 +7,7 @@ vectorizer = load(open(r'tfidf-vectorizer.pkl', 'rb'))
 
 
 def fetch_label(data: str) -> str:
+    """Returns the classification **label** for the message."""
     vector = vectorizer.transform([data]).toarray()
     prediction = model.predict(vector.reshape(1, -1))[0]
     return "HAM" if prediction == 0 else "SPAM"
