@@ -89,11 +89,5 @@ The application handles errors with custom templates :
 * **404 Not Found :** Returns a `404` page if the route does not exist.
 * **500 Internal Server Error :** Returns a `500` page for server-related errors.
 
-## Deployment
-
-#### **Link** : [Web Service on Render](https://sms-spam-classifier-ofm6.onrender.com/)
-
-> If you are on the **Hobby** plan on Render *(like me)*, mind your **Monthly Free Usage** information.
-
 ## License
 This project is licensed under the [MIT](https://opensource.org/license/mit) License.
